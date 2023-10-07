@@ -267,6 +267,17 @@ chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 sudo -u "$name" mkdir -p "/home/$name/.config/abook/"
 sudo -u "$name" mkdir -p "/home/$name/.config/mpd/playlists/"
+sudo -u "$name" mkdir -p "/home/$name/.cache/wal/" && sudo -u "$name" touch "/home/$name/.cache/wal/sequences"
+sudo -u "$name" cat > ./temp << "EOF"
+Section "InputClass"
+        Identifier "us-rua"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "us,ru"
+        Option "XkbVariant" ",ruu"
+        Option "XkbOptions" "grp:win_space_toggle,grp:rctrl_switch,lv3:ralt_switch"
+EndSection
+EOF
+sudo cp ./temp /etc/X11/xorg.conf.d/00-keyboard.conf;sudo rm ./temp
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen >/var/lib/dbus/machine-id
