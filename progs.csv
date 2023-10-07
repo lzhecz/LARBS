@@ -6,6 +6,7 @@
 ,ntp, "network time protocol"
 ,wget,"Network utility to retrieve files from the Web"
 ,nano,"Pico editor clone with enhancements"
+,nano-syntax-highlighting, "nano editor syntax highlighting enhancements"
 ,zsh,"A very advanced and programmable command interpreter (shell) for UNIX"
 ,libx11,"dependecies for dusk below. X11 client-side library"
 ,libxcb,"X11 client-side library"
